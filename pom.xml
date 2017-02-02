@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>soapUI Regressor TestStep plugin</name>
-    <artifactId>regressor-plugin</artifactId>
+    <artifactId>soapui-regressor-plugin</artifactId>
     <groupId>com.junaid.plugins</groupId>
 
     <repositories>
@@ -19,7 +19,7 @@
         </repository>
     </repositories>
 
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-plugin</version>
 
     <dependencies>
 
