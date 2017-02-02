@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:soapui-factories xmlns:tns="http://eviware.com/soapui/config">
+    <tns:factory id="RegressorTestStep" factoryType="com.eviware.soapui.impl.wsdl.teststeps.registry.WsdlTestStepFactory"
+   factoryClass="com.junaid.plugins.RegressorTestStepFactory"/>
+
+    <tns:factory id="RegressorTestStepPanelBuilder" factoryType="com.eviware.soapui.model.util.PanelBuilderFactory"
+   factoryClass="com.junaid.plugins.RegressorTestStepPanelBuilderFactory"/>
+
+</tns:soapui-factories>
