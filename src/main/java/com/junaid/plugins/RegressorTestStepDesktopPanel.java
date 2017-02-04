@@ -29,9 +29,9 @@ public class RegressorTestStepDesktopPanel extends ModelItemDesktopPanel<Regress
     private void buildUI()
     {
         ButtonBarBuilder builder = new ButtonBarBuilder();
-        builder.addFixed( new JLabel( "EMail Subject" ) );
+        builder.addFixed( new JLabel( "For Enhancements" ) );
         builder.addRelatedGap();
-        subjectField = new JUndoableTextField( "Subject");
+        subjectField = new JUndoableTextField( "Demo");
 //        subjectField.getDocument().addDocumentListener( new DocumentListenerAdapter()
 //        {
 //            @Override
