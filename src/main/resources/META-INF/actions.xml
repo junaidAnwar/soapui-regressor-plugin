@@ -5,6 +5,6 @@
 		class="com.eviware.soapui.impl.wsdl.actions.teststep.WsdlTestStepSoapUIActionGroup">
 		<tns:actionMapping actionId="SeperatorAction" />
 		<tns:actionMapping actionId="ShowOnlineSoapUIHelp"
-			keyStroke="F1" param="http://blog.smartbear.com/software-quality/bid/170458/Creating-your-own-TestSteps-in-soapUI" />
+			keyStroke="F1" param="http://https://github.com/junaidAnwar/soapui-regressor-plugin" />
 	</tns:actionGroup>
 </tns:soapui-actions>

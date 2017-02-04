@@ -6,7 +6,7 @@ import com.eviware.soapui.impl.wsdl.teststeps.WsdlTestStep;
 import com.eviware.soapui.impl.wsdl.teststeps.registry.WsdlTestStepFactory;
 
 /**
- * The actual factory class that creates new EMailTestSteps from scratch or an XMLBeans config.
+ * The actual factory class that creates new RegressorTestSteps from scratch or an XMLBeans config.
  */
 
 public class RegressorTestStepFactory extends WsdlTestStepFactory
@@ -15,7 +15,7 @@ public class RegressorTestStepFactory extends WsdlTestStepFactory
 
 	public RegressorTestStepFactory()
 	{
-		super(REGRESSOR_STEP_ID, "Regressor TestStep", "Compares responses from all requests", "email.png" );
+		super(REGRESSOR_STEP_ID, "Regressor", "Compares responses from all requests", RegressorTestStep.ICON );
 	}
 
 	public WsdlTestStep buildTestStep( WsdlTestCase testCase, TestStepConfig config, boolean forLoadTest )

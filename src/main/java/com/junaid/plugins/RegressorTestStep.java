@@ -18,14 +18,16 @@ import java.util.List;
  */
 
 
-@PluginTestStep(typeName = "RegressorTestStep", name = "Regressor TestStep", description = "Compares all requests responses")
+@PluginTestStep(typeName = "RegressorTestStep", name = "Regressor", description = "Compares all requests responses")
 public class RegressorTestStep extends WsdlTestStepWithProperties {
+
+    public static final String ICON = "compare.png";
 
     public RegressorTestStep(WsdlTestCase testCase, TestStepConfig config, boolean forLoadTest) {
         super(testCase, config, true, forLoadTest);
         if( !forLoadTest )
         {
-            setIcon( UISupport.createImageIcon("email.png") );
+            setIcon( UISupport.createImageIcon(ICON) );
         }
 
     }
