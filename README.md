@@ -8,7 +8,7 @@ Possible Enhancements:
     - Enhance it to do XML comparison regardless of order of attributes.
     - Provide flexibility to exclude attributes while comparing responses.
     - Provide better UI for Regression Results Viewer:
-        - include compparison response in UI.
+        - include comparison response in UI.
         - replace Jtabs with better UI component for easy viewing f multiple responses.
         - capability to show diff between responses side by side.
         
