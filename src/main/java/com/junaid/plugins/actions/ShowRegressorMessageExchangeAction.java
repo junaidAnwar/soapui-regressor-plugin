@@ -77,16 +77,17 @@ public class ShowRegressorMessageExchangeAction extends AbstractAction {
     }
 
     private void buildTabsForMessageExchange(JTabbedPane messageTabs, MessageExchange messageExchange) {
-        messageTabs.addTab("Request Message", this.buildRequestTab(messageExchange));
-        messageTabs.addTab("Response Message", this.buildResponseTab(messageExchange));
-        messageTabs.addTab("Properties", this.buildPropertiesTab(messageExchange));
+        String requestName = "["+messageExchange.getModelItem().getName()+"]-";
+        messageTabs.addTab(requestName +"Request Message", this.buildRequestTab(messageExchange));
+        messageTabs.addTab(requestName +"Response Message", this.buildResponseTab(messageExchange));
+        messageTabs.addTab(requestName +"Properties", this.buildPropertiesTab(messageExchange));
         String[] messages = messageExchange.getMessages();
         if(messages != null && messages.length > 0) {
-            messageTabs.addTab("Messages", this.buildMessagesTab(messageExchange));
+            messageTabs.addTab(requestName+"Messages", this.buildMessagesTab(messageExchange));
         }
 
         if(this.getAssertedXPaths(messageExchange).size() > 0) {
-            messageTabs.addTab("XPath Assertions", this.buildAssertionsTab(messageExchange));
+            messageTabs.addTab(requestName+"XPath Assertions", this.buildAssertionsTab(messageExchange));
         }
     }
 
