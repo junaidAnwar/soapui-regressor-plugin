@@ -4,6 +4,7 @@ import com.eviware.soapui.config.TestStepConfig;
 import com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase;
 import com.eviware.soapui.impl.wsdl.teststeps.WsdlTestStep;
 import com.eviware.soapui.impl.wsdl.teststeps.registry.WsdlTestStepFactory;
+import com.eviware.soapui.support.UISupport;
 
 /**
  * The actual factory class that creates new RegressorTestSteps from scratch or an XMLBeans config.
@@ -16,6 +17,7 @@ public class RegressorTestStepFactory extends WsdlTestStepFactory
 	public RegressorTestStepFactory()
 	{
 		super(REGRESSOR_STEP_ID, "Regressor", "Compares responses from all requests", RegressorTestStep.ICON );
+		UISupport.addResourceClassLoader(this.getClass().getClassLoader());
 	}
 
 	public WsdlTestStep buildTestStep( WsdlTestCase testCase, TestStepConfig config, boolean forLoadTest )
