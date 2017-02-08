@@ -11,6 +11,7 @@ import com.eviware.soapui.plugins.auto.PluginTestStep;
 import com.eviware.soapui.support.UISupport;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -36,24 +37,29 @@ public class RegressorTestStep extends WsdlTestStepWithProperties {
     public TestStepResult run(TestCaseRunner testRunner, TestCaseRunContext testRunContext) {
         //SoapUI.log("bu!");
 
-        TestStepResult result = compareResponses(testRunner);
+        TestStepResult result = compareResponses(testRunContext);
         return result;
     }
 
-    private TestStepResult compareResponses(TestCaseRunner testRunner) {
+    private TestStepResult compareResponses(TestCaseRunContext testCaseRunContext) {
         TestStepResult.TestStepStatus testStepStatus = TestStepResult.TestStepStatus.FAILED;
         StringBuilder buffer =new StringBuilder();
         List<String> responses = new ArrayList<>();
 
         RegressorTestStepResult result = new RegressorTestStepResult(this);
-        List<TestStepResult> testRunnerResults = testRunner.getResults();
-        for(TestStepResult testStepResult :testRunnerResults){
+        List<TestStepResult> testRunnerResults = testCaseRunContext.getTestRunner().getResults();
+        Iterator<TestStepResult> iterator = testRunnerResults.iterator();
+
+        while(iterator.hasNext()){
+            TestStepResult testStepResult = iterator.next();
             if(testStepResult instanceof WsdlTestRequestStepResult){
                 buffer.append(testStepResult.getTestStep().getName());
                 responses.add(((WsdlTestRequestStepResult) testStepResult).getResponseContent());
                 result.addtestRequestStepResult((WsdlTestRequestStepResult) testStepResult);
+                iterator.remove();
             }
         }
+        
         int responsesSize = responses.size();
         switch (responsesSize){
             case 0:{
