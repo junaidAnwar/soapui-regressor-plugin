@@ -37,8 +37,7 @@ public class RegressorTestStep extends WsdlTestStepWithProperties {
     public TestStepResult run(TestCaseRunner testRunner, TestCaseRunContext testRunContext) {
         //SoapUI.log("bu!");
 
-        TestStepResult result = compareResponses(testRunContext);
-        return result;
+        return compareResponses(testRunContext);
     }
 
     private TestStepResult compareResponses(TestCaseRunContext testCaseRunContext) {
@@ -59,7 +58,7 @@ public class RegressorTestStep extends WsdlTestStepWithProperties {
                 iterator.remove();
             }
         }
-        
+
         int responsesSize = responses.size();
         switch (responsesSize){
             case 0:{
@@ -86,14 +85,6 @@ public class RegressorTestStep extends WsdlTestStepWithProperties {
                 else{
                     result.addMessage("Responses do not match!");
                 }
-//                if(controlResponse==null){
-//                    result.addMessage("Could not compare since response 1 not found");
-//                }
-//                else {
-//                    for(String candidateResponse : responses){
-//                        controlResponse.equals(candidateResponse);
-//                    }
-//                }
             }
         }
 
